@@ -1,6 +1,6 @@
 #!/usr/bin/env io
 
-Importer addSearchPath("~/.io")
+Importer addSearchPath("/Users/andrew/.io/IoCheck")
 
 IoCheck
 
