@@ -25,3 +25,17 @@ genSeq := block(gen,
 genString := block(
 	genSeq call(genChar) join
 )
+
+IoCheck forAll := method(property, generators,
+	0 to(100) map(i,
+		values := generators map(g, g call)
+
+		if(performWithArgList(property, values) not,
+			"*** Failed!" println
+			values map(v, println)
+			break
+		)
+	)
+
+	"+++ OK, passed 100 tests." println
+)

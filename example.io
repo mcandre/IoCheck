@@ -2,10 +2,8 @@
 
 IoCheck
 
-"Random int: #{genInt call}" interpolate println
+propEven := block(i,
+	i % 2 == 0
+)
 
-"Random bool: #{genBool call}" interpolate println
-
-"Random char: #{genChar call}" interpolate println
-
-"Random string: #{genString call}" interpolate println
+IoCheck forAll(propEven, list(genInt))
