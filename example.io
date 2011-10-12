@@ -7,3 +7,5 @@ IoCheck
 "Random bool: #{genBool}" interpolate println
 
 "Random char: #{genChar}" interpolate println
+
+"Random string: #{genString}" interpolate println

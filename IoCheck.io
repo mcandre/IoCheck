@@ -1,3 +1,5 @@
+Range
+
 IoCheck := Object clone
 
 genInt := method(
@@ -10,4 +12,16 @@ genBool := method(
 
 genChar := method(
 	Random value(128) floor asCharacter
+)
+
+genSeq := method(gen,
+	len := Random value(100) floor
+
+	0 to(len) map(i,
+		gen()
+	)
+)
+
+genString := method(
+	genSeq(genChar) join
 )
