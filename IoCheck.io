@@ -26,13 +26,20 @@ genString := block(
 	genSeq call(genChar) join
 )
 
+# By Paragon
+# http://blurgle.blogspot.com/2006/08/converting-lists-into-messages-and.html
+
+getSlot("Block") callWithArgList := method(argList,
+	getSlot("self") doMessage(argList asMessage setName("call"))
+)
+
 IoCheck forAll := method(property, generators,
 	0 to(100) map(i,
 		values := generators map(g, g call)
 
-		if(performWithArgList(property, values) not,
+		if(property callWithArgList(values) not,
 			"*** Failed!" println
-			values map(v, println)
+			values map(println)
 			break
 		)
 	)
