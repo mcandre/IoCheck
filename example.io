@@ -1,5 +1,7 @@
 #!/usr/bin/env io
 
+Importer addSearchPath("~/.io")
+
 IoCheck
 
 propEven := block(i,
