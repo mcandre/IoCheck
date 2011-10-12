@@ -2,26 +2,26 @@ Range
 
 IoCheck := Object clone
 
-genInt := method(
+genInt := block(
 	Random value(256) floor
 )
 
-genBool := method(
+genBool := block(
 	Random value(2) floor == 1
 )
 
-genChar := method(
+genChar := block(
 	Random value(128) floor asCharacter
 )
 
-genSeq := method(gen,
+genSeq := block(gen,
 	len := Random value(100) floor
 
 	0 to(len) map(i,
-		gen()
+		gen call
 	)
 )
 
-genString := method(
-	genSeq(genChar) join
+genString := block(
+	genSeq call(genChar) join
 )

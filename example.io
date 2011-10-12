@@ -2,10 +2,10 @@
 
 IoCheck
 
-"Random int: #{genInt}" interpolate println
+"Random int: #{genInt call}" interpolate println
 
-"Random bool: #{genBool}" interpolate println
+"Random bool: #{genBool call}" interpolate println
 
-"Random char: #{genChar}" interpolate println
+"Random char: #{genChar call}" interpolate println
 
-"Random string: #{genString}" interpolate println
+"Random string: #{genString call}" interpolate println
