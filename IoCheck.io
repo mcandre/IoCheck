@@ -26,13 +26,6 @@ genString := block(
 	genSeq call(genChar) join
 )
 
-# By Paragon
-# http://blurgle.blogspot.com/2006/08/converting-lists-into-messages-and.html
-
-getSlot("Block") callWithArgList := method(argList,
-	getSlot("self") doMessage(argList asMessage setName("call"))
-)
-
 IoCheck forAll := method(property, generators,
 	failed := false
 
