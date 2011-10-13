@@ -1,6 +1,6 @@
 #!/usr/bin/env io
 
-Importer addSearchPath("/Users/andrew/.io/IoCheck")
+Importer addSearchPath("~/.io/IoCheck")
 
 IoCheck
 
@@ -9,3 +9,15 @@ propEven := block(i,
 )
 
 IoCheck forAll(propEven, list(genInt))
+
+genEven := block(
+	i := genInt call
+
+	if(i % 2 != 0,
+		i := i + 1
+	)
+
+	i
+)
+
+IoCheck forAll(propEven, list(genEven))

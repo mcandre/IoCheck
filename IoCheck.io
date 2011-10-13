@@ -34,15 +34,23 @@ getSlot("Block") callWithArgList := method(argList,
 )
 
 IoCheck forAll := method(property, generators,
+	failed := false
+
 	0 to(100) map(i,
 		values := generators map(g, g call)
 
 		if(property callWithArgList(values) not,
+			failed := true
+
 			"*** Failed!" println
+
 			values map(println)
+
 			break
 		)
 	)
 
-	"+++ OK, passed 100 tests." println
+	if(failed not,
+		"+++ OK, passed 100 tests." println
+	)
 )
