@@ -17,13 +17,18 @@ genChar := block(
 genSeq := block(gen,
 	len := Random value(100) floor
 
+	# Io intermittantly borks on list(65) map(asCharacter)
+	if(len == 1,
+		len := len + 1
+	)
+
 	0 to(len) map(i,
 		gen call
 	)
 )
 
 genString := block(
-	genSeq call(genChar) join
+	genSeq call(genChar) map(asCharacter) join
 )
 
 IoCheck forAll := method(property, generators,
