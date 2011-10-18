@@ -28,7 +28,7 @@ genSeq := block(gen,
 )
 
 genString := block(
-	genSeq call(genChar) map(asCharacter) join
+	genSeq call(genChar) join
 )
 
 IoCheck forAll := method(property, generators,
