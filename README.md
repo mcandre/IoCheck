@@ -8,5 +8,7 @@ EXAMPLE
 
 	$ ./example.io 
 	*** Failed!
-	203
+	117
+	+++ OK, passed 100 tests.
+	+++ OK, passed 100 tests.
 	+++ OK, passed 100 tests.

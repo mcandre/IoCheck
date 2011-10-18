@@ -21,3 +21,9 @@ genEven := block(
 )
 
 IoCheck forAll(propEven, list(genEven))
+
+propReversible := block(s,
+	s == s reverse reverse
+)
+
+IoCheck forAll(propReversible, list(genString))
