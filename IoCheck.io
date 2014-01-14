@@ -51,4 +51,6 @@ IoCheck forAll := method(property, generators,
 	if(failed not,
 		"+++ OK, passed 100 tests." println
 	)
+
+	failed not
 )
