@@ -1,14 +1,24 @@
 # IoCheck - an Io port of the QuickCheck unit test framework
 
-## HOMEPAGE
+# EXAMPLE
 
-[http://www.yellosoft.us/quickcheck](http://www.yellosoft.us/quickcheck)
+```
+$ io example.io 
+*** Failed!
+117
++++ OK, passed 100 tests.
++++ OK, passed 100 tests.
++++ OK, passed 100 tests.
+```
 
-## EXAMPLE
+See [example.io](https://github.com/mcandre/IoCheck/blob/master/example.io) for more information.
 
-	$ ./example.io 
-	*** Failed!
-	117
-	+++ OK, passed 100 tests.
-	+++ OK, passed 100 tests.
-	+++ OK, passed 100 tests.
+# HOMEPAGE
+
+http://www.yellosoft.us/quickcheck
+
+# REQUIREMENTS
+
+* [Io](http://iolanguage.org/)
+
+E.g., `brew install io`
