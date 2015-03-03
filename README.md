@@ -3,7 +3,7 @@
 # EXAMPLE
 
 ```
-$ io example.io 
+$ io example.io
 *** Failed!
 117
 +++ OK, passed 100 tests.
