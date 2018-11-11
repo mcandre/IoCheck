@@ -3,54 +3,54 @@ Range
 IoCheck := Object clone
 
 genInt := block(
-  Random value(256) floor
+    Random value(256) floor
 )
 
 genBool := block(
-  Random value(2) floor == 1
+    Random value(2) floor == 1
 )
 
 genChar := block(
-  Random value(128) floor asCharacter
+    Random value(128) floor asCharacter
 )
 
 genSeq := block(gen,
-  len := Random value(100) floor
+    len := Random value(100) floor
 
-  # Io intermittantly borks on list(65) map(asCharacter)
-  if(len == 1,
-    len := len + 1
-  )
+    # Io intermittantly borks on list(65) map(asCharacter)
+    if(len == 1,
+        len := len + 1
+    )
 
-  0 to(len) map(i,
-    gen call
-  )
+    0 to(len) map(i,
+        gen call
+    )
 )
 
 genString := block(
-  genSeq call(genChar) join
+    genSeq call(genChar) join
 )
 
 IoCheck forAll := method(property, generators,
-  failed := false
+    failed := false
 
-  0 to(100) map(i,
-    values := generators map(g, g call)
+    0 to(100) map(i,
+        values := generators map(g, g call)
 
-    if(property callWithArgList(values) not,
-      failed := true
+        if(property callWithArgList(values) not,
+            failed := true
 
-      "*** Failed!" println
+            "*** Failed!" println
 
-      values map(println)
+            values map(println)
 
-      break
+            break
+        )
     )
-  )
 
-  if(failed not,
-    "+++ OK, passed 100 tests." println
-  )
+    if(failed not,
+        "+++ OK, passed 100 tests." println
+    )
 
-  failed not
+    failed not
 )
